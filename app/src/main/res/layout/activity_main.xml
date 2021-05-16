@@ -4,16 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="55dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Conoce tu futuro"
         android:textColor="#437cf6"
         android:textSize="30sp"
-        android:textStyle="bold|italic" />
+        android:textStyle="bold|italic"
+        android:layout_margin="40dp"
+        />
 
+    <EditText
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="24sp"
+        android:hint="ESCRIBE TU MENSAJE"
+        android:inputType="textShortMessage"
+        />
 
+    <ImageButton
+        android:id="@+id/btn"
+        android:layout_width="127dp"
+        android:layout_height="97dp"
+        android:layout_gravity="center"
+        android:layout_margin="40dp"
+        android:
+        android:src="@drawable/magicball"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textSize="26sp"
+        android:textColor="#437cf6"
+        android:textStyle="bold"
+        android:text="..."
+        android:layout_margin="60dp"
+        />
 </LinearLayout>
