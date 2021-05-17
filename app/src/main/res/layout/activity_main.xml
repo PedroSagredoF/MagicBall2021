@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/fondoball"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Conoce tu futuro"
+        android:text="@string/conoce_tu_futuro"
         android:textColor="#437cf6"
         android:textSize="30sp"
         android:textStyle="bold|italic"
@@ -24,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:textSize="24sp"
-        android:hint="ESCRIBE TU MENSAJE"
+        android:hint="@string/escribe_tu_mensaje"
         android:inputType="textShortMessage"
         />
 
@@ -34,11 +35,11 @@
         android:layout_height="97dp"
         android:layout_gravity="center"
         android:layout_margin="40dp"
-        android:
         android:src="@drawable/magicball"
         />
 
     <TextView
+        android:id="@+id/respuestaVista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
