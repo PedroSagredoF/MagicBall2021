@@ -1,8 +1,11 @@
 package com.example.magicball;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -33,12 +36,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v){
+
         //Creación Metotodo Switch
         switch (v.getId()){
             case R.id.btn:
                 int rand = new Random().nextInt(respuestaArray.length);
                 respuesta.setText(respuestaArray[rand]);
                 break;
+        }
+
+        //Para Cerrar el Teclado una Vez presioando el boton
+        cerrarTeclado();
+    }
+
+    private void cerrarTeclado() {
+        View view = this.getCurrentFocus();
+        if(view != null){
+            InputMethodManager input = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            input.hideSoftInputFromWindow(view.getWindowToken(),0);
         }
     }
 }
