@@ -6,6 +6,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ImageButton ball;
     private TextView respuesta;
+    private EditText mensaje;
     private String[] respuestaArray ={"Puede Ser","Pero Por Supuesto","No lo se","Pregunta de Nuevo","50 y 50","Claro que si",
                                         "Definitivamente puede no ser", "NO", "Si", "Estoy ocupado, pregunta mas tarde", "Dudoso"};
 
@@ -23,12 +25,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Referencia a la pregunta
+        mensaje = findViewById(R.id.question);
+
         //Referencia la Imagen
         ball = findViewById(R.id.btn);
 
         //Referencia al Texto
         respuesta = findViewById(R.id.respuestaVista);
-
         ball.setOnClickListener(this);
         Toast.makeText(MainActivity.this, "Consulta tu destino", Toast.LENGTH_SHORT).show();
 
@@ -37,14 +41,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v){
 
-        //Creación Metotodo Switch
-        switch (v.getId()){
-            case R.id.btn:
-                int rand = new Random().nextInt(respuestaArray.length);
-                respuesta.setText(respuestaArray[rand]);
-                break;
+        //Se Agrega Validacion
+        String tx = mensaje.getText().toString();
+        if (tx.length()== 0) {
+            respuesta.setText("Debe Escribir una Consulta");
+        } else {
+            //Creación Metotodo Switch
+            switch (v.getId()) {
+                case R.id.btn:
+                    int rand = new Random().nextInt(respuestaArray.length);
+                    respuesta.setText(respuestaArray[rand]);
+                    break;
+            }
         }
-
         //Para Cerrar el Teclado una Vez presioando el boton
         cerrarTeclado();
     }
