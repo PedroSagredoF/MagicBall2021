@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MagicBall</string>
-    <string name="conoce_tu_futuro">Conoce tu Futuro</string>
-    <string name="escribe_tu_mensaje">ESCRIBE TU MENSAJE</string>
+    <string name="app_name">Cristal Ball</string>
+    <string name="conoce_tu_futuro">Bolita de Cristal</string>
+    <string name="escribe_tu_mensaje">ESCRIBE TU CONSULTA</string>
 </resources>

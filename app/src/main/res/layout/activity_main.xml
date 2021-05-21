@@ -1,52 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:background="#FBFBFB"
     android:orientation="vertical"
-    android:background="@drawable/fondoball"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="273dp"
+        android:layout_height="62dp"
         android:layout_gravity="center"
-        android:text="@string/conoce_tu_futuro"
-        android:textColor="#437cf6"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
+        android:textAlignment="center"
         android:layout_margin="40dp"
-        />
+        android:layout_marginBottom="24dp"
+        android:fontFamily="@font/BrotherTattoo"
+        android:text="@string/conoce_tu_futuro"
+        android:textColor="#757575"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/question"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="24sp"
         android:hint="@string/escribe_tu_mensaje"
         android:inputType="textShortMessage"
-        />
-
-    <ImageButton
-        android:id="@+id/btn"
-        android:layout_width="127dp"
-        android:layout_height="97dp"
-        android:layout_gravity="center"
-        android:layout_margin="40dp"
-        android:src="@drawable/magicball"
-        />
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="167dp" />
 
     <TextView
         android:id="@+id/respuestaVista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textSize="26sp"
-        android:textColor="#437cf6"
-        android:textStyle="bold"
-        android:text="..."
         android:layout_margin="60dp"
-        />
-</LinearLayout>
+        android:fontFamily="@font/000"
+        android:text=""
+        android:textColor="#437cf6"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@+id/imageView3"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="@+id/imageView3" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="408dp"
+        android:layout_height="365dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bola"
+        tools:layout_editor_absoluteY="350dp" />
+
+    <ImageButton
+        android:id="@+id/btn"
+        android:layout_width="71dp"
+        android:layout_height="63dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/question"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
